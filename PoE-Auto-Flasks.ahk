@@ -246,9 +246,9 @@ pressFlasks:
 	return
 
 
-^Space::
-    Reload
-return
+; ^Space::
+;     Reload
+; return
 
 Reset:
     Flask1Dur := 4.00
