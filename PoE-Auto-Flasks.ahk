@@ -106,7 +106,7 @@ pot3 := {active:false, forceUnactive:false, keys:[3], duration:[Flask3Dur], next
 pot4 := {active:false, forceUnactive:false, keys:[4], duration:[Flask4Dur], nextUse: A_TickCount, lastUsed:1}
 pot5 := {active:false, forceUnactive:false, keys:[5], duration:[Flask5Dur], nextUse: A_TickCount, lastUsed:1}
 
-
+#IfWinActive Path of Exile ahk_class POEWindowClass
 Hotkey,%ToggleHotkey%,ToggleButt
 
 gui, +AlwaysOnTop ; +ToolWindow
@@ -228,7 +228,7 @@ pressFlasks:
                     
                     myKey := p.keys[p.lastUsed]
                     ; MsgBox, % myKey
-                    Send, %myKey%
+                    SendInput, %myKey%
                     Random, sleeperOffset, 0, jitterValue
                     p.nextUse := (A_TickCount + p.duration[p.lastUsed]*1000 - sleeperOffset)
                     ; MsgBox, % p.lastUsed " " p.keys.MaxIndex()
@@ -444,8 +444,20 @@ configureFlasks:
     AutoSave()
 return
 
+
+; ========
+; Extra Exit
+; ========
+~Enter::
+~Space::
+~Alt::
+    runscript=0
+return
+
+
+
 GuiEscape:
     ExitApp
-
+return
 
 
