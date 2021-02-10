@@ -13,7 +13,7 @@
 CoordMode, Pixel, Screen
 CoordMode, Mouse, Screen
 
-ToggleHotkey= +Space
+ToggleHotkey= XButton1
 
 global jitterValue
 global Flask1Dur
